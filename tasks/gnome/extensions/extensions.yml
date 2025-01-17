@@ -1,0 +1,19 @@
+- name: "Install Tactile"
+  ansible.builtin.include_tasks:
+    file: tactile.yml
+
+- name: "Install Blur my Shell"
+  ansible.builtin.include_tasks:
+    file: blur-my-shell.yml
+
+- name: "Install Space Bar"
+  ansible.builtin.include_tasks:
+    file: space-bar.yml
+
+- name: "Install Alphabetical App Grid"
+  ansible.builtin.include_tasks:
+    file: alphabetical-app-grid.yml
+
+# - name: "Install Top Hat"
+#   ansible.builtin.include_tasks:
+#     file: top-hat.yml

@@ -1,0 +1,48 @@
+- name: Install extension
+  ansible.builtin.include_role:
+    name: jaredhocutt.gnome_extensions
+  vars:
+    gnome_extension_ids:
+      - 5219
+
+- name: Move gsettings schema before compilation
+  become: true
+  ansible.builtin.copy:
+    src: "/home/dennisbejze/.local/share/gnome-shell/extensions/tophat@fflewddur.github.io/schemas/org.gnome.shell.extensions.tophat.gschema.xml"
+    dest: /usr/share/glib-2.0/schemas/org.gnome.shell.extensions.tophat.gschema.xml
+    remote_src: true
+    mode: preserve
+
+- name: Compile gsettings schema
+  become: true
+  ansible.builtin.shell: glib-compile-schemas /usr/share/glib-2.0/schemas/
+
+- name: "Set 'show-icons' to false"
+  gsetting:
+    schema: org.gnome.shell.extensions.tophat
+    key: show-icons
+    value: "false"
+
+- name: "Set 'show-cpu' to false"
+  gsetting:
+    schema: org.gnome.shell.extensions.tophat
+    key: show-cpu
+    value: "false"
+
+- name: "Set 'show-disk' to false"
+  gsetting:
+    schema: org.gnome.shell.extensions.tophat
+    key: show-disk
+    value: "false"
+
+- name: "Set 'show-mem' to false"
+  gsetting:
+    schema: org.gnome.shell.extensions.tophat
+    key: show-mem
+    value: "false"
+
+- name: "Set 'network-usage-unit' to bits"
+  gsetting:
+    schema: org.gnome.shell.extensions.tophat
+    key: network-usage-unit
+    value: "bits"

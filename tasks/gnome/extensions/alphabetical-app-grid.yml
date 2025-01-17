@@ -1,0 +1,24 @@
+- name: Install extension
+  ansible.builtin.include_role:
+    name: jaredhocutt.gnome_extensions
+  vars:
+    gnome_extension_ids:
+      - 4269
+
+- name: Move gsettings schema before compilation
+  become: true
+  ansible.builtin.copy:
+    src: "/home/dennisbejze/.local/share/gnome-shell/extensions/AlphabeticalAppGrid@stuarthayhurst/schemas/org.gnome.shell.extensions.AlphabeticalAppGrid.gschema.xml"
+    dest: /usr/share/glib-2.0/schemas/org.gnome.shell.extensions.AlphabeticalAppGrid.gschema.xml
+    remote_src: true
+    mode: preserve
+
+- name: Compile gsettings schema
+  become: true
+  ansible.builtin.shell: glib-compile-schemas /usr/share/glib-2.0/schemas/
+
+- name: "Set '[...] app-grid folder-order-position' to end"
+  gsetting:
+    schema: org.gnome.shell.extensions.alphabetical-app-grid
+    key: folder-order-position
+    value: "end"

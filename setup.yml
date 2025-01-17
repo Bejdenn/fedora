@@ -1,0 +1,22 @@
+- name: Setup Fedora workstation
+  hosts: localhost
+  tasks:
+    - name: Install packages from RPM, Flathub and other sources
+      ansible.builtin.include_tasks:
+        file: tasks/packages.yml
+
+    - name: "Configure Gnome: hotkeys"
+      ansible.builtin.include_tasks:
+        file: tasks/gnome/hotkeys.yml
+
+    - name: "Configure Gnome: settings"
+      ansible.builtin.include_tasks:
+        file: tasks/gnome/settings.yml
+
+    - name: "Configure Gnome: extensions"
+      ansible.builtin.include_tasks:
+        file: tasks/gnome/extensions/extensions.yml
+
+    - name: "Configure Gnome: dock"
+      ansible.builtin.include_tasks:
+        file: tasks/gnome/dock.yml
