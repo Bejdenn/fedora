@@ -1,6 +1,0 @@
----
-roles:
-  - name: jaredhocutt.gnome_extensions
-    src: ssh://git@github.com/jaredhocutt/ansible-gnome-extensions.git
-    version: master
-    scm: git
