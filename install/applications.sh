@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-for script in "./*.sh"; do source $script; done
+for script in ./*.sh; do source $script; done
 
 sudo dnf copr enable -y pgdev/ghostty
 sudo dnf copr enable -y atim/lazygit
