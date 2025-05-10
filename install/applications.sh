@@ -7,6 +7,7 @@ sudo dnf copr enable -y atim/lazygit
 
 sudo dnf install -y \
 	btop \
+	cargo \
 	fastfetch \
 	ghostty \
 	go \
@@ -28,3 +29,7 @@ flatpak install -y flathub \
 	md.obsidian.Obsidian \
 	org.localsend.localsend_app \
 	org.zotero.Zotero
+
+# for some reason, the treesitter version that comes bundled with Fedora leads to errors when trying to
+# compile a LaTeX grammar definition.
+cargo install --locked tree-sitter-cli
