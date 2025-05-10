@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Set Iosevka as the default monospace font
 gsettings set org.gnome.desktop.interface monospace-font-name 'IosevkaTerm Nerd Font Mono 10'

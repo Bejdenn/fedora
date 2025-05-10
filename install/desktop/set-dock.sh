@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Favorite apps for dock
 apps=(
 	"1password.desktop"

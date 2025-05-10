@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 sudo dnf install -y gnome-extensions-app pipx
 pipx install gnome-extensions-cli --system-site-packages

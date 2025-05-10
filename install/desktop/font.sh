@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 curl --create-dirs --output-dir $HOME/.local/share/fonts/iosevka-term -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/IosevkaTerm.tar.xz
 

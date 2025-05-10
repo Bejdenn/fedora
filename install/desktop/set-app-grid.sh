@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Remove Btop entry for one that runs in alacritty
 sudo rm -rf /usr/share/applications/btop.desktop

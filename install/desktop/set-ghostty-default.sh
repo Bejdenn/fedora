@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Adding ghostty to nautilus contextual menu requires the python wrapper for the libraries
 sudo dnf install -y nautilus-python
