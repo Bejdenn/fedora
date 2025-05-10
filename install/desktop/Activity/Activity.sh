@@ -5,7 +5,7 @@ cat <<EOF >~/.local/share/applications/Activity.desktop
 Version=1.0
 Name=Activity
 Comment=System activity from btop
-Exec=ghostty --title=Activity --class=Activity -e btop
+Exec=ghostty --window-width=160 --window-height=60 --title=Activity --class=Activity -e btop
 Terminal=false
 Type=Application
 Icon=/home/$USER/.local/share/applications/icons/Activity.png
