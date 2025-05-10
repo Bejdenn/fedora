@@ -3,8 +3,6 @@
 sudo dnf install -y gnome-extensions-app pipx
 pipx install gnome-extensions-cli --system-site-packages
 
-gum confirm "To install Gnome extensions, you need to accept some confirmations. Are you ready?"
-
 # Install new extensions
 gext install tactile@lundal.io
 gext install blur-my-shell@aunetx
